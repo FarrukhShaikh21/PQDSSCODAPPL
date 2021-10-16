@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssCodExistingMgrRecruitmentFkLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="pqt.dss.cod.model.vo.DssCodExistingMgrRecruitmentFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="DssChangeOfDesignationView"
+    Cardinality="1"
+    Source="true"
+    Owner="pqt.dss.cod.model.vo.DssChangeOfDesignationView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DssChangeOfDesignationView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.vo.DssChangeOfDesignationView.CodIdPk"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DssCodMgrRecruitmentFormView"
+    Cardinality="-1"
+    Owner="pqt.dss.cod.model.vo.DssCodMgrRecruitmentFormView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DssCodMgrRecruitmentFormView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.vo.DssCodMgrRecruitmentFormView.ChangeOfDesigIdFk"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="pqt.dss.cod.model.DSSCODModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

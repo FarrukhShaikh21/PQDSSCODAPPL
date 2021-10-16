@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Search Page" id="ph1">
+          <af:query id="qryId1" headerText="Search"
+                    value="#{bindings.DssChangeOfDesignationViewCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.DssChangeOfDesignationViewCriteriaQuery.queryModel}"
+                    queryListener="#{bindings.DssChangeOfDesignationViewCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.DssChangeOfDesignationViewCriteriaQuery.processQueryOperation}"
+                    resultComponentId="::pc1:resId1" disclosed="true" saveQueryMode="hidden" modeChangeVisible="false"/>
+        </af:panelHeader>
+        <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="detach &amp;&amp; viewMenu">
+          <f:facet name="toolbar">
+            <af:toolbar id="t1">
+              <af:group id="g1">
+                <af:button text="Create New" id="b1" action="goCreate"/>
+              </af:group>
+            </af:toolbar>
+          </f:facet>
+          <af:table value="#{bindings.DssChangeOfDesignationView1.collectionModel}" var="row"
+                    rows="#{bindings.DssChangeOfDesignationView1.rangeSize}"
+                    emptyText="#{bindings.DssChangeOfDesignationView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.DssChangeOfDesignationView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.DssChangeOfDesignationView1.collectionModel.makeCurrent}"
+                    rowSelection="single" fetchSize="#{bindings.DssChangeOfDesignationView1.rangeSize}" id="resId1"
+                    scrollPolicy="page" partialTriggers="l1">
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.label}" id="c12"
+                       rendered="false">
+              <af:inputText value="#{row.bindings.CodIdPk.inputValue}"
+                            label="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.label}"
+                            required="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.mandatory}"
+                            columns="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.displayWidth}"
+                            maximumLength="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.precision}"
+                            shortDesc="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.CodIdPk.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.CodDocNumber.label}" id="c10"
+                       width="200" align="center">
+              <af:outputText value="#{row.CodDocNumber}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.CodDocNumber.tooltip}" id="ot8"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.AgentCode.label}" id="c4" width="110"
+                       align="center">
+              <af:outputText value="#{row.AgentCode}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.AgentCode.tooltip}" id="ot1"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.AgentName.label}" id="c5" width="110"
+                       align="center">
+              <af:outputText value="#{row.AgentName}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.AgentName.tooltip}" id="ot2"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.CurrentDesig.label}" id="c7"
+                       width="110" align="center">
+              <af:outputText value="#{row.CurrentDesig}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.CurrentDesig.tooltip}" id="ot5"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.AgentCnic.label}" id="resId1c4"
+                       width="100" align="center">
+              <af:outputText value="#{row.AgentCnic}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.AgentCnic.tooltip}" id="ot4"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.CurrentBranchName.label}" id="c6"
+                       width="110" align="center">
+              <af:outputText value="#{row.CurrentBranchName}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.CurrentBranchName.tooltip}"
+                             id="ot3"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.WorkflowStatus.label}" id="c9"
+                       align="center">
+              <af:outputText value="#{row.WorkflowStatus}"
+                             shortDesc="#{bindings.DssChangeOfDesignationView1.hints.WorkflowStatus.tooltip}" id="ot6"/>
+            </af:column>
+            <af:column headerText="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.label}" id="c8"
+                       rendered="false">
+              <af:inputText value="#{row.bindings.CodIdPk.inputValue}"
+                            label="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.label}"
+                            required="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.mandatory}"
+                            columns="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.displayWidth}"
+                            maximumLength="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.precision}"
+                            shortDesc="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.tooltip}" id="it2">
+                <f:validator binding="#{row.bindings.CodIdPk.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DssChangeOfDesignationView1.hints.CodIdPk.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column id="c1" width="50" align="center" headerText="Detail">
+              <af:link id="l3" icon="/images/detailsicon_enabled.gif" action="goDetail"/>
+            </af:column>
+            <af:column id="c2" width="50" align="center" headerText="Update">
+              <af:link id="l2" icon="/images/updateicon_enabled.gif" action="goUpdate"
+                       disabled="#{row.WorkflowStatus eq 'APPROVED' or row.WorkflowStatus eq 'INPROCESS'}"/>
+            </af:column>
+            <af:column id="c3" width="50" align="center" headerText="Delete">
+              <af:link id="l1" icon="/images/deleteicon_enabled.gif" action="goDelete"
+                       disabled="#{row.WorkflowStatus eq 'APPROVED' or row.WorkflowStatus eq 'INPROCESS'}"/>
+            </af:column>
+            <af:column id="c11" headerText="Report" align="center" width="50">
+              <af:link id="l4" icon="/images/printLogo.gif"
+                       actionListener="#{CallReport.callDSSReports('DSS_COD', (row.bindings.CodIdPk.inputValue))}"/>
+            </af:column>
+          </af:table>
+        </af:panelCollection>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

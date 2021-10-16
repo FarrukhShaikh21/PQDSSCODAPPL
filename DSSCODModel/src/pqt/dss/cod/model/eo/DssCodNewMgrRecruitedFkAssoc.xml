@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssCodNewMgrRecruitedFkAssoc"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="DssChangeOfDesignation"
+    Cardinality="1"
+    Source="true"
+    Owner="pqt.dss.cod.model.eo.DssChangeOfDesignation"
+    DeleteContainee="true"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DssChangeOfDesignation"/>
+      <Attr Name="_foreignKey" Value="pqt.dss.cod.model.eo.DssChangeOfDesignation.CodPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssChangeOfDesignation.CodIdPk"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="DssCodNewRecruitedMgr"
+    Cardinality="-1"
+    Owner="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DssCodNewRecruitedMgr"/>
+      <Attr Name="_foreignKey" Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.fk_DssCodNewRecruitedMgr"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.ChangeOfDesigIdFk1"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

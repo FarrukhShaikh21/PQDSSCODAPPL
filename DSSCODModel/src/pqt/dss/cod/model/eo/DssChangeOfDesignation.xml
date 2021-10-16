@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssChangeOfDesignation"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DSS_CHANGE_OF_DESIGNATION"
+  AliasName="DssChangeOfDesignation"
+  BindingStyle="OracleName"
+  RowClass="pqt.dss.cod.model.eo.DssChangeOfDesignationImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="CodIdPk"
+    ColumnName="COD_ID_PK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"
+    PrimaryKey="true"
+    IsNotNull="true"/>
+  <Attribute
+    Name="AgentNoFk"
+    ColumnName="AGENT_NO_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="CurrentRank"
+    Precision="500"
+    ColumnName="CURRENT_RANK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.CurrentRank_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AgentCnic"
+    Precision="20"
+    ColumnName="AGENT_CNIC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.AgentCnic_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BranchName"
+    Precision="500"
+    ColumnName="BRANCH_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.BranchName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="NewRank"
+    Precision="500"
+    ColumnName="NEW_RANK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.NewRank_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EffectiveFrom"
+    ColumnName="EFFECTIVE_FROM"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_CHANGE_OF_DESIGNATION"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.EffectiveFrom_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="1000"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.Remarks_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserIdFk"
+    ColumnName="USER_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="EnterDate"
+    ColumnName="ENTER_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="PromoteDemote"
+    Precision="1"
+    ColumnName="PROMOTE_DEMOTE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="DSS_CHANGE_OF_DESIGNATION"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NewBranch"
+    Precision="500"
+    ColumnName="NEW_BRANCH"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BranchStatus"
+    Precision="50"
+    ColumnName="BRANCH_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.BranchStatus_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DssStatus"
+    Precision="50"
+    ColumnName="DSS_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.DssStatus_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BranchNotifIdFk"
+    ColumnName="BRANCH_NOTIF_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="DssNotifIdFk"
+    ColumnName="DSS_NOTIF_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="CodDocNumber"
+    Precision="50"
+    ColumnName="COD_DOC_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.CodDocNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="WorkflowNotificationId"
+    ColumnName="WORKFLOW_NOTIFICATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="WorkflowStatus"
+    Precision="50"
+    ColumnName="WORKFLOW_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="DssCodMgrRecruitmentForm"
+    Association="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc"
+    AssociationEnd="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc.DssCodMgrRecruitmentForm"
+    AssociationOtherEnd="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc.DssChangeOfDesignation"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="DssCodNewRecruitedMgr"
+    Association="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc"
+    AssociationEnd="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc.DssCodNewRecruitedMgr"
+    AssociationOtherEnd="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc.DssChangeOfDesignation"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CodPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COD_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssChangeOfDesignation.CodIdPk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DssChangeOfDesignationEffectiveFromCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"EFFECTIVE_FROM" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_CHANGE_OF_DESIGNATION_EFFE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssChangeOfDesignation.EffectiveFrom"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DssChangeOfDesignationPromoteDemoteCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PROMOTE_DEMOTE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_CHANGE_OF_DESIGNATION_PROM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssChangeOfDesignation.PromoteDemote"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="pqt.dss.cod.model.DSSCODModelBundle"/>
+  </ResourceBundle>
+</Entity>

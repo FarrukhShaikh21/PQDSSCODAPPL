@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="detailCodPageDef"
+                Package="fragments.cod">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DssChangeOfDesignationView1" RangeSize="25" DataControl="CODAMDataControl"
+              id="DssChangeOfDesignationView1Iterator"/>
+    <iterator Binds="DssCodMgrRecruitmentFormView2" RangeSize="25" DataControl="CODAMDataControl"
+              id="DssCodMgrRecruitmentFormView2Iterator"/>
+    <iterator Binds="DssCodNewRecruitedMgrView1" RangeSize="25" DataControl="CODAMDataControl"
+              id="DssCodNewRecruitedMgrView1Iterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_CurrentBranchName"
+                  id="CurrentBranchName"/>
+    <listOfValues IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_AgentCode"
+                  id="AgentCode"/>
+    <listOfValues IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_PromoteRank"
+                  id="PromoteRank"/>
+    <listOfValues IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_DemoteRank"
+                  id="DemoteRank"/>
+    <listOfValues IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_NewBranchName"
+                  id="NewBranchName"/>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="AgentName">
+      <AttrNames>
+        <Item Value="AgentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="AgentCnic">
+      <AttrNames>
+        <Item Value="AgentCnic"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_PromoteDemote"
+          id="PromoteDemote" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="CodIdPk">
+      <AttrNames>
+        <Item Value="CodIdPk"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="callWorkflow" RequiresUpdateModel="true" Action="invokeMethod" MethodName="callWorkflow"
+                  IsViewObjectMethod="false" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.dataProvider">
+      <NamedData NDName="p_document_id" NDType="oracle.jbo.domain.Number"/>
+      <NamedData NDName="ApprovalType" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="DssApprove" RequiresUpdateModel="true" Action="invokeMethod" MethodName="DssApprove"
+                  IsViewObjectMethod="false" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.dataProvider"/>
+    <methodAction id="callWorkflow1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="callWorkflow"
+                  IsViewObjectMethod="false" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.dataProvider">
+      <NamedData NDName="p_document_id" NDType="oracle.jbo.domain.Number"/>
+      <NamedData NDName="ApprovalType" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="CodIdPk1">
+      <AttrNames>
+        <Item Value="CodIdPk"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="DssCodMgrRecruitmentFormView2Iterator" id="DssCodMgrRecruitmentFormView2">
+      <nodeDefinition DefName="pqt.dss.cod.model.vo.DssCodMgrRecruitmentFormView" Name="DssCodMgrRecruitmentFormView20">
+        <AttrNames>
+          <Item Value="ManagerCode"/>
+          <Item Value="ManagerName"/>
+          <Item Value="Designation"/>
+          <Item Value="DOJ"/>
+          <Item Value="DsfStrength"/>
+          <Item Value="AchievedCases"/>
+          <Item Value="AchievedContribution"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DssCodNewRecruitedMgrView1Iterator" id="DssCodNewRecruitedMgrView1">
+      <nodeDefinition DefName="pqt.dss.cod.model.vo.DssCodNewRecruitedMgrView" Name="DssCodNewRecruitedMgrView10">
+        <AttrNames>
+          <Item Value="Month"/>
+          <Item Value="Consultants"/>
+          <Item Value="TeamLeaders"/>
+          <Item Value="ABUH"/>
+          <Item Value="BUH"/>
+          <Item Value="Producers"/>
+          <Item Value="Cases"/>
+          <Item Value="Contribution"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="NewRankLevel">
+      <AttrNames>
+        <Item Value="NewRankLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="CodDocNumber">
+      <AttrNames>
+        <Item Value="CodDocNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="EnterDate">
+      <AttrNames>
+        <Item Value="EnterDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="CurrentDesig">
+      <AttrNames>
+        <Item Value="CurrentDesig"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="QuarterBussPol">
+      <AttrNames>
+        <Item Value="QuarterBussPol"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="QuarterBuss">
+      <AttrNames>
+        <Item Value="QuarterBuss"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="HalfyearBussPol">
+      <AttrNames>
+        <Item Value="HalfyearBussPol"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="HalfyearBuss">
+      <AttrNames>
+        <Item Value="HalfyearBuss"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="YearlyBussPol">
+      <AttrNames>
+        <Item Value="YearlyBussPol"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="YearlyBuss">
+      <AttrNames>
+        <Item Value="YearlyBuss"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="callCODWorkflow" RequiresUpdateModel="true" Action="invokeMethod" MethodName="callCODWorkflow"
+                  IsViewObjectMethod="false" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.dataProvider">
+      <NamedData NDName="p_document_id" NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+    <attributeValues IterBinding="DssChangeOfDesignationView1Iterator" id="WorkflowStatus">
+      <AttrNames>
+        <Item Value="WorkflowStatus"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

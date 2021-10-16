@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssCodNewRecruitedMgr"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DSS_COD_NEW_RECRUITED_MGR"
+  AliasName="DssCodNewRecruitedMgr"
+  BindingStyle="OracleName"
+  RowClass="pqt.dss.cod.model.eo.DssCodNewRecruitedMgrImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="NewlyRecruitedMgrIdPk"
+    IsNotNull="true"
+    ColumnName="NEWLY_RECRUITED_MGR_ID_PK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Month"
+    ColumnName="MONTH"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Month_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Consultants"
+    Precision="100"
+    ColumnName="CONSULTANTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Consultants_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="TeamLeaders"
+    Precision="100"
+    ColumnName="TEAM_LEADERS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.TeamLeaders_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ABUH"
+    Precision="100"
+    ColumnName="A_B_U_H"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.ABUH_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BUH"
+    Precision="100"
+    ColumnName="B_U_H"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.BUH_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Producers"
+    Precision="100"
+    ColumnName="PRODUCERS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Producers_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Cases"
+    Precision="100"
+    ColumnName="CASES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Cases_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Contribution"
+    Precision="100"
+    ColumnName="CONTRIBUTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Contribution_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserIdFk"
+    ColumnName="USER_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"/>
+  <Attribute
+    Name="EnterDate"
+    ColumnName="ENTER_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"/>
+  <Attribute
+    Name="ChangeOfDesigIdFk1"
+    ColumnName="CHANGE_OF_DESIG_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_NEW_RECRUITED_MGR"/>
+  <AccessorAttribute
+    Name="DssChangeOfDesignation"
+    Association="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc"
+    AssociationEnd="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc.DssChangeOfDesignation"
+    AssociationOtherEnd="pqt.dss.cod.model.eo.DssCodNewMgrRecruitedFkAssoc.DssCodNewRecruitedMgr"
+    Type="pqt.dss.cod.model.eo.DssChangeOfDesignationImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DssCodNewRecruitedMgrCasesCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CASES" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_COD_NEW_RECRUITED_MGR_CASE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Cases"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DssCodNewRecruitedMgrContributionCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CONTRIBUTION" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_COD_NEW_RECRUITED_MGR_CONT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Contribution"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DssCodNewRecruitedMgrMonthCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"MONTH" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_COD_NEW_RECRUITED_MGR_MONT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.Month"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="NewlyRecruitedMgrPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="NEWLY_RECRUITED_MGR_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.NewlyRecruitedMgrIdPk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ChangeOfDesigIdFk">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="COD_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHANGE_OF_DESIG_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="fk_DssCodNewRecruitedMgr">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="COD_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_DSS_COD_NEW_RECRUITED_MGR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodNewRecruitedMgr.ChangeOfDesigIdFk1"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="pqt.dss.cod.model.DSSCODModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssCodMgrRecruitmentForm"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DSS_COD_MGR_RECRUITMENT_FORM"
+  AliasName="DssCodMgrRecruitmentForm"
+  BindingStyle="OracleName"
+  RowClass="pqt.dss.cod.model.eo.DssCodMgrRecruitmentFormImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ExistingManagerIdPk"
+    IsNotNull="true"
+    ColumnName="EXISTING_MANAGER_ID_PK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ChangeOfDesigIdFk"
+    ColumnName="CHANGE_OF_DESIG_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"/>
+  <Attribute
+    Name="ManagerCode"
+    ColumnName="MANAGER_CODE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.ManagerCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ManagerName"
+    Precision="100"
+    ColumnName="MANAGER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.ManagerName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Designation"
+    Precision="100"
+    ColumnName="DESIGNATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.Designation_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DOJ"
+    ColumnName="D_O_J"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.DOJ_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DsfStrength"
+    Precision="100"
+    ColumnName="DSF_STRENGTH"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.DsfStrength_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AchievedCases"
+    Precision="100"
+    ColumnName="ACHIEVED_CASES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.AchievedCases_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AchievedContribution"
+    Precision="100"
+    ColumnName="ACHIEVED_CONTRIBUTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.AchievedContribution_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserIdFk"
+    ColumnName="USER_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"/>
+  <Attribute
+    Name="EnterDate"
+    ColumnName="ENTER_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_COD_MGR_RECRUITMENT_FORM"/>
+  <AccessorAttribute
+    Name="DssChangeOfDesignation"
+    Association="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc"
+    AssociationEnd="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc.DssChangeOfDesignation"
+    AssociationOtherEnd="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc.DssCodMgrRecruitmentForm"
+    Type="pqt.dss.cod.model.eo.DssChangeOfDesignationImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ExistingManagerPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EXISTING_MANAGER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.ExistingManagerIdPk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ChangeOfDesigFk">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="COD_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHANGE_OF_DESIG_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.cod.model.eo.DssCodMgrRecruitmentForm.ChangeOfDesigIdFk"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="pqt.dss.cod.model.DSSCODModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="queryCodPageDef"
+                Package="fragments.cod">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DssChangeOfDesignationView1" RangeSize="10" DataControl="CODAMDataControl"
+              id="DssChangeOfDesignationView1Iterator"/>
+    <searchRegion Criteria="DssChangeOfDesignationViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DssChangeOfDesignationView1Iterator" id="DssChangeOfDesignationViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DssChangeOfDesignationView1Iterator" id="DssChangeOfDesignationView1">
+      <nodeDefinition DefName="pqt.dss.cod.model.vo.DssChangeOfDesignationView" Name="DssChangeOfDesignationView10">
+        <AttrNames>
+          <Item Value="CodIdPk"/>
+          <Item Value="CodDocNumber"/>
+          <Item Value="AgentCode"/>
+          <Item Value="AgentName"/>
+          <Item Value="CurrentDesig"/>
+          <Item Value="AgentCnic"/>
+          <Item Value="CurrentBranchName"/>
+          <Item Value="WorkflowStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DssChangeOfDesignationView1Iterator" id="Delete"
+            InstanceName="CODAMDataControl.DssChangeOfDesignationView1" DataControl="CODAMDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="DeleteCommit" RequiresUpdateModel="true" Action="invokeMethod" MethodName="DeleteCommit"
+                  IsViewObjectMethod="false" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="cod-task-flow-definition">
+    <default-activity>codSearchUser</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__13">
+      <managed-bean-name>codDetailBean</managed-bean-name>
+      <managed-bean-class>pqt.dss.cod.view.codDetailClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__14">
+      <managed-bean-name>createUpdateCod</managed-bean-name>
+      <managed-bean-class>pqt.dss.cod.view.Backing.createUpdateCod</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="queryCod">
+      <page>/fragments/cod/queryCod.jsff</page>
+    </view>
+    <view id="detailCod">
+      <page>/fragments/cod/detailCod.jsff</page>
+    </view>
+    <view id="createUpdateCod">
+      <page>/fragments/cod/createUpdateCod.jsff</page>
+    </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="deleteCommit">
+      <method>#{bindings.DeleteCommit.execute}</method>
+      <outcome>
+        <fixed-outcome>Delete</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Delete">
+      <method>#{bindings.Delete.execute}</method>
+      <outcome>
+        <fixed-outcome>Delete</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="codSearchUser">
+      <method>#{bindings.codSearchUser.execute}</method>
+      <outcome>
+        <fixed-outcome>codSearchUser</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>queryCod</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goUpdate</from-outcome>
+        <to-activity-id>createUpdateCod</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>goCreate</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>goDetail</from-outcome>
+        <to-activity-id>detailCod</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>goDelete</from-outcome>
+        <to-activity-id>Delete</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>createUpdateCod</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>createUpdateCod</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>goQuery</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>queryCod</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>detailCod</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>backQuery</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>Delete</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>Delete</from-outcome>
+        <to-activity-id>deleteCommit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id>deleteCommit</from-activity-id>
+      <control-flow-case id="__24">
+        <from-outcome>Delete</from-outcome>
+        <to-activity-id>queryCod</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>codSearchUser</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome>codSearchUser</from-outcome>
+        <to-activity-id>queryCod</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

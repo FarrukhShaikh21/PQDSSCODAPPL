@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31"
+                id="cod_task_flow_definition_cod_task_flow_definition_codSearchUserPageDef" Package="flows.Cod"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="codSearchUser" RequiresUpdateModel="true" Action="invokeMethod" MethodName="codSearchUser"
+                  IsViewObjectMethod="true" DataControl="CODAMDataControl"
+                  InstanceName="data.CODAMDataControl.DssChangeOfDesignationView1"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="pqt.dss.cod.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/flows/Cod/cod-task-flow-definition.xml#cod-task-flow-definition@CreateInsert"
+          usageId="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_CreateInsertPageDef"/>
+    <page path="/WEB-INF/flows/Cod/cod-task-flow-definition.xml#cod-task-flow-definition@Rollback"
+          usageId="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_RollbackPageDef"/>
+    <page path="/WEB-INF/flows/Cod/cod-task-flow-definition.xml#cod-task-flow-definition@deleteCommit"
+          usageId="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_DeletePageDef"/>
+    <page path="/WEB-INF/flows/Cod/cod-task-flow-definition.xml#cod-task-flow-definition@Delete"
+          usageId="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_DeletePageDef1"/>
+    <page path="/fragments/cod/queryCod.jsff" usageId="pqt_dss_cod_view_queryCodPageDef"/>
+    <page path="/Page/COD.jsf" usageId="pqt_dss_cod_view_CODPageDef"/>
+    <page path="/fragments/cod/createUpdateCod.jsff" usageId="pqt_dss_cod_view_createUpdateCodPageDef"/>
+    <page path="/fragments/cod/detailCod.jsff" usageId="pqt_dss_cod_view_detailCodPageDef"/>
+    <page path="/fragments/cod/codNotification.jsff" usageId="pqt_dss_cod_view_codNotificationPageDef"/>
+    <page path="/WEB-INF/flows/Cod/cod-notification-task-flow-definition.xml#cod-notification-task-flow-definition@setNVC_WfDocumentId"
+          usageId="pqt_dss_cod_view_cod_notification_task_flow_definition_cod_notification_task_flow_definition_setNVC_WfDocumentIdPageDef"/>
+    <page path="/Page/codNotification.jsf" usageId="pqt_dss_cod_view_codNotificationPageDef1"/>
+    <page path="/WEB-INF/flows/Cod/cod-notification-task-flow-definition.xml#cod-notification-task-flow-definition@codSearchUser"
+          usageId="pqt_dss_cod_view_cod_notification_task_flow_definition_cod_notification_task_flow_definition_codSearchUserPageDef"/>
+    <page path="/WEB-INF/flows/Cod/cod-task-flow-definition.xml#cod-task-flow-definition@codSearchUser"
+          usageId="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_codSearchUserPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_CreateInsertPageDef"
+          path="flows.Cod.cod_task_flow_definition_cod_task_flow_definition_CreateInsertPageDef"/>
+    <page id="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_RollbackPageDef"
+          path="flows.Cod.cod_task_flow_definition_cod_task_flow_definition_RollbackPageDef"/>
+    <page id="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_DeletePageDef"
+          path="flows.Cod.cod_task_flow_definition_cod_task_flow_definition_DeletePageDef"/>
+    <page id="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_DeletePageDef1"
+          path="flows.Cod.cod_task_flow_definition_cod_task_flow_definition_DeletePageDef1"/>
+    <page id="pqt_dss_cod_view_queryCodPageDef" path="fragments.cod.queryCodPageDef"/>
+    <page id="pqt_dss_cod_view_CODPageDef" path="Page.CODPageDef"/>
+    <page id="pqt_dss_cod_view_createUpdateCodPageDef" path="fragments.cod.createUpdateCodPageDef"/>
+    <page id="pqt_dss_cod_view_detailCodPageDef" path="fragments.cod.detailCodPageDef"/>
+    <page id="pqt_dss_cod_view_codNotificationPageDef" path="fragments.cod.codNotificationPageDef"/>
+    <page id="pqt_dss_cod_view_cod_notification_task_flow_definition_cod_notification_task_flow_definition_setNVC_WfDocumentIdPageDef"
+          path="flows.Cod.cod_notification_task_flow_definition_cod_notification_task_flow_definition_setNVC_WfDocumentIdPageDef"/>
+    <page id="pqt_dss_cod_view_codNotificationPageDef1" path="Page.codNotificationPageDef"/>
+    <page id="pqt_dss_cod_view_cod_notification_task_flow_definition_cod_notification_task_flow_definition_codSearchUserPageDef"
+          path="flows.Cod.cod_notification_task_flow_definition_cod_notification_task_flow_definition_codSearchUserPageDef"/>
+    <page id="pqt_dss_cod_view_cod_task_flow_definition_cod_task_flow_definition_codSearchUserPageDef"
+          path="flows.Cod.cod_task_flow_definition_cod_task_flow_definition_codSearchUserPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="CODAMDataControl" Package="pqt.dss.cod.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="CODAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
