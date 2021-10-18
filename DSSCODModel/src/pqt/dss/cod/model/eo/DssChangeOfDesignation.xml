@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DssChangeOfDesignation"
-  Version="12.2.1.0.31"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="DSS_CHANGE_OF_DESIGNATION"
@@ -282,6 +282,13 @@
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="GisLocationIdFk"
+    ColumnName="GIS_LOCATION_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_CHANGE_OF_DESIGNATION"/>
   <AccessorAttribute
     Name="DssCodMgrRecruitmentForm"
     Association="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc"
