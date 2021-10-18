@@ -115,12 +115,19 @@ public class DssChangeOfDesignationViewImpl extends ViewObjectImpl implements Ds
     }
     public void codSearchUser()
     {
-              ViewCriteria vc = this.getViewCriteria("DssChangeOfDesignationViewCriteria");
-              this.applyViewCriteria(vc);
-              setWhereClause(null);
               FacesContext fctx = FacesContext.getCurrentInstance();
               ExternalContext ectx = fctx.getExternalContext();
               HttpSession userSession = (HttpSession) ectx.getSession(false);
+              userSession.setAttribute("SSV_UserDept", 3);
+              userSession.setAttribute("pUserId",1139);
+              userSession.setAttribute("SSV_UserType","BO");
+
+              ViewCriteria vc = this.getViewCriteria("DssChangeOfDesignationViewCriteria");
+              this.applyViewCriteria(vc);
+              setWhereClause(null);
+//              FacesContext fctx = FacesContext.getCurrentInstance();
+//              ExternalContext ectx = fctx.getExternalContext();
+//              HttpSession userSession = (HttpSession) ectx.getSession(false);
               Object VUserID = userSession.getAttribute("pUserId") == null ? "0" : userSession.getAttribute("pUserId");
 
               setWhereClause("(exists\n" + 

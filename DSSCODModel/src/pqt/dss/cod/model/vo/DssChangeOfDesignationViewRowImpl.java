@@ -67,6 +67,7 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
         DssNotifIdFk,
         WorkflowStatus,
         WorkflowNotificationId,
+        GisLocationIdFk,
         AgentLevel,
         AgentCodeSearch,
         MinDate,
@@ -78,7 +79,8 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
         AgentRankLovVo3,
         AgentRankLovVo4,
         BranchLOV1,
-        AgentDtlLovVo2;
+        AgentDtlLovVo2,
+        AccLocationLov;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -143,6 +145,7 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
     public static final int DSSNOTIFIDFK = AttributesEnum.DssNotifIdFk.index();
     public static final int WORKFLOWSTATUS = AttributesEnum.WorkflowStatus.index();
     public static final int WORKFLOWNOTIFICATIONID = AttributesEnum.WorkflowNotificationId.index();
+    public static final int GISLOCATIONIDFK = AttributesEnum.GisLocationIdFk.index();
     public static final int AGENTLEVEL = AttributesEnum.AgentLevel.index();
     public static final int AGENTCODESEARCH = AttributesEnum.AgentCodeSearch.index();
     public static final int MINDATE = AttributesEnum.MinDate.index();
@@ -155,6 +158,7 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
     public static final int AGENTRANKLOVVO4 = AttributesEnum.AgentRankLovVo4.index();
     public static final int BRANCHLOV1 = AttributesEnum.BranchLOV1.index();
     public static final int AGENTDTLLOVVO2 = AttributesEnum.AgentDtlLovVo2.index();
+    public static final int ACCLOCATIONLOV = AttributesEnum.AccLocationLov.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -813,6 +817,22 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for GIS_LOCATION_ID_FK using the alias name GisLocationIdFk.
+     * @return the GIS_LOCATION_ID_FK
+     */
+    public Number getGisLocationIdFk() {
+        return (Number) getAttributeInternal(GISLOCATIONIDFK);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for GIS_LOCATION_ID_FK using the alias name GisLocationIdFk.
+     * @param value value to set the GIS_LOCATION_ID_FK
+     */
+    public void setGisLocationIdFk(Number value) {
+        setAttributeInternal(GISLOCATIONIDFK, value);
+    }
+
+    /**
      * Gets the attribute value for WORKFLOW_NOTIFICATION_ID using the alias name WorkflowNotificationId.
      * @return the WORKFLOW_NOTIFICATION_ID
      */
@@ -905,6 +925,13 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAgentDtlLovVo2() {
         return (RowSet) getAttributeInternal(AGENTDTLLOVVO2);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccLocationLov.
+     */
+    public RowSet getAccLocationLov() {
+        return (RowSet) getAttributeInternal(ACCLOCATIONLOV);
     }
 }
 

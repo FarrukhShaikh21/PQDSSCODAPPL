@@ -133,5 +133,7 @@
         <Item Value="NewRankLevel"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="DssChangeOfDesignationView1Iterator" StaticList="false" Uses="LOV_GisLocationIdFk"
+          id="GisLocationIdFk" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

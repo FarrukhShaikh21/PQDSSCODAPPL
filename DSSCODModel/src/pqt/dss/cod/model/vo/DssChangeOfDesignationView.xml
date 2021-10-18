@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DssChangeOfDesignationView"
-  Version="12.2.1.0.31"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
@@ -147,6 +147,10 @@
   <ViewAccessor
     Name="AgentDtlLovVo2"
     ViewObjectName="pqt.dss.cod.model.lov.AgentDtlLovVo"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccLocationLov"
+    ViewObjectName="pqt.dss.cod.model.lov.LocationLov"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PromoteDemote"
@@ -315,89 +319,109 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT DssChangeOfDesignation.COD_ID_PK,                          
-       DssChangeOfDesignation.AGENT_NO_FK,                          
-       DssChangeOfDesignation.CURRENT_RANK,                          
-       DssChangeOfDesignation.AGENT_CNIC,                          
-       DssChangeOfDesignation.BRANCH_NAME,                          
-       DssChangeOfDesignation.NEW_RANK,                          
-       DssChangeOfDesignation.EFFECTIVE_FROM,                          
-       DssChangeOfDesignation.REMARKS,                          
-       DssChangeOfDesignation.USER_ID_FK,                          
-       DssChangeOfDesignation.ENTER_DATE,                          
-       DssChangeOfDesignation.LAST_UPDATED_BY,                          
-       DssChangeOfDesignation.LAST_UPDATED_DATE,                          
-       DssChangeOfDesignation.PROMOTE_DEMOTE,                        
-       DssChangeOfDesignation.NEW_BRANCH,           
-       DssChangeOfDesignation.Cod_Doc_Number,           
-       (SELECT Ag.V_AGENT_CODE                          
-          FROM vu_dss_cod_agent_dtl AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_CODE,                          
-       (SELECT Ag.AGENT_NAME                          
-          FROM vu_dss_cod_agent_dtl AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_NAME,        
-         (SELECT  ag.N_POLICIES                         
-          FROM VU_DSS_COD_AGENT_DTL AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_policy,        
-         (SELECT Ag.N_ISS_CON                          
-          FROM VU_DSS_COD_AGENT_DTL AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_Issue_cont,        
-         (SELECT Ag.N_ISS_TOP                          
-          FROM VU_DSS_COD_AGENT_DTL AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_Issue_Top,      
-         (SELECT Ag.Total_Business                         
-          FROM VU_DSS_COD_AGENT_DTL AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) total_business,    
-         (SELECT sum(ag.n_cq_bus_pol)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Quarter_buss_pol,        
-         (SELECT sum(ag.n_cq_bus)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Quarter_buss,        
-         (SELECT sum(ag.n_hy_bus_pol)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) HalfYear_buss_pol,        
-          (SELECT sum(ag.n_hy_bus)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) HalfYear_buss,        
-         (SELECT sum(ag.n_yr_bus_pol)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Yearly_buss_pol,        
-         (SELECT sum(ag.n_yr_bus)                             
-          FROM VU_DSS_COD_AGENT_DTL AG                              
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Yearly_buss,    
-       (SELECT FBR.V_BRANCH_NAME                          
-          FROM VU_DSS_ST_BRANCH FBR                          
-         WHERE FBR.V_BRANCH_CODE = DssChangeOfDesignation.BRANCH_NAME) CURRENT_BRANCH_NAME,                          
-       (SELECT TBR.V_BRANCH_NAME                          
-          FROM VU_DSS_ST_BRANCH TBR                          
-         WHERE TBR.V_BRANCH_CODE = DssChangeOfDesignation.NEW_BRANCH) NEW_BRANCH_NAME,                          
-       (SELECT CAR.v_description                          
-          FROM dss_agent_rank_view CAR                          
-         WHERE CAR.v_rank_code = DssChangeOfDesignation.CURRENT_RANK) CURRENT_DESIG,                       
-       (SELECT NAR.v_description                          
-          FROM dss_agent_rank_view NAR                          
-         WHERE NAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) PROMOTE_RANK,                          
-       (SELECT NAR.v_description                          
-          FROM dss_agent_rank_view NAR                          
-         WHERE NAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) DEMOTE_RANK,                    
-         (SELECT CAR.n_level                          
-          FROM dss_agent_rank_view CAR                          
-         WHERE CAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) NEW_RANK_LEVEL,                          
-       DssChangeOfDesignation.Branch_Status,                          
-       DssChangeOfDesignation.Dss_Status,                          
-       DssChangeOfDesignation.Branch_Notif_Id_Fk,                          
-       DssChangeOfDesignation.Dss_Notif_Id_Fk, 
-       DssChangeOfDesignation.Workflow_Status, 
-       DssChangeOfDesignation.Workflow_Notification_Id, 
-       (SELECT Ag.n_level                    
-          FROM vu_dss_cod_agent_dtl AG                    
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_Level  ,             
-         (SELECT Ag.V_AGENT_CODE                          
-          FROM vu_dss_cod_agent_dtl AG                          
-         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_CODE_SEARCH,          
-         trunc(sysdate - 90) Min_Date          
-  FROM DSS_CHANGE_OF_DESIGNATION DssChangeOfDesignation                         
+  <ListBinding
+    Name="LOV_GisLocationIdFk"
+    ListVOName="AccLocationLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GisLocationIdFk"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="IlLocIdPk"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Location"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT DssChangeOfDesignation.COD_ID_PK,                           
+       DssChangeOfDesignation.AGENT_NO_FK,                           
+       DssChangeOfDesignation.CURRENT_RANK,                           
+       DssChangeOfDesignation.AGENT_CNIC,                           
+       DssChangeOfDesignation.BRANCH_NAME,                           
+       DssChangeOfDesignation.NEW_RANK,                           
+       DssChangeOfDesignation.EFFECTIVE_FROM,                           
+       DssChangeOfDesignation.REMARKS,                           
+       DssChangeOfDesignation.USER_ID_FK,                           
+       DssChangeOfDesignation.ENTER_DATE,                           
+       DssChangeOfDesignation.LAST_UPDATED_BY,                           
+       DssChangeOfDesignation.LAST_UPDATED_DATE,                           
+       DssChangeOfDesignation.PROMOTE_DEMOTE,                         
+       DssChangeOfDesignation.NEW_BRANCH,            
+       DssChangeOfDesignation.Cod_Doc_Number,            
+       (SELECT Ag.V_AGENT_CODE                           
+          FROM vu_dss_cod_agent_dtl AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_CODE,                           
+       (SELECT Ag.AGENT_NAME                           
+          FROM vu_dss_cod_agent_dtl AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_NAME,         
+         (SELECT  ag.N_POLICIES                          
+          FROM VU_DSS_COD_AGENT_DTL AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_policy,         
+         (SELECT Ag.N_ISS_CON                           
+          FROM VU_DSS_COD_AGENT_DTL AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_Issue_cont,         
+         (SELECT Ag.N_ISS_TOP                           
+          FROM VU_DSS_COD_AGENT_DTL AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Bus_Issue_Top,       
+         (SELECT Ag.Total_Business                          
+          FROM VU_DSS_COD_AGENT_DTL AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) total_business,     
+         (SELECT sum(ag.n_cq_bus_pol)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Quarter_buss_pol,         
+         (SELECT sum(ag.n_cq_bus)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Quarter_buss,         
+         (SELECT sum(ag.n_hy_bus_pol)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) HalfYear_buss_pol,         
+          (SELECT sum(ag.n_hy_bus)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) HalfYear_buss,         
+         (SELECT sum(ag.n_yr_bus_pol)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Yearly_buss_pol,         
+         (SELECT sum(ag.n_yr_bus)                              
+          FROM VU_DSS_COD_AGENT_DTL AG                               
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) Yearly_buss,     
+       (SELECT FBR.V_BRANCH_NAME                           
+          FROM VU_DSS_ST_BRANCH FBR                           
+         WHERE FBR.V_BRANCH_CODE = DssChangeOfDesignation.BRANCH_NAME) CURRENT_BRANCH_NAME,                           
+       (SELECT TBR.V_BRANCH_NAME                           
+          FROM VU_DSS_ST_BRANCH TBR                           
+         WHERE TBR.V_BRANCH_CODE = DssChangeOfDesignation.NEW_BRANCH) NEW_BRANCH_NAME,                           
+       (SELECT CAR.v_description                           
+          FROM dss_agent_rank_view CAR                           
+         WHERE CAR.v_rank_code = DssChangeOfDesignation.CURRENT_RANK) CURRENT_DESIG,                        
+       (SELECT NAR.v_description                           
+          FROM dss_agent_rank_view NAR                           
+         WHERE NAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) PROMOTE_RANK,                           
+       (SELECT NAR.v_description                           
+          FROM dss_agent_rank_view NAR                           
+         WHERE NAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) DEMOTE_RANK,                     
+         (SELECT CAR.n_level                           
+          FROM dss_agent_rank_view CAR                           
+         WHERE CAR.v_rank_code = DssChangeOfDesignation.NEW_RANK) NEW_RANK_LEVEL,                           
+       DssChangeOfDesignation.Branch_Status,                           
+       DssChangeOfDesignation.Dss_Status,                           
+       DssChangeOfDesignation.Branch_Notif_Id_Fk,                           
+       DssChangeOfDesignation.Dss_Notif_Id_Fk,  
+       DssChangeOfDesignation.Workflow_Status,  
+       DssChangeOfDesignation.Workflow_Notification_Id,  
+       DssChangeOfDesignation.GIS_LOCATION_ID_FK, 
+       (SELECT Ag.n_level                     
+          FROM vu_dss_cod_agent_dtl AG                     
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_Level  ,              
+         (SELECT Ag.V_AGENT_CODE                           
+          FROM vu_dss_cod_agent_dtl AG                           
+         WHERE Ag.N_AGENT_NO = DssChangeOfDesignation.Agent_No_Fk) AGENT_CODE_SEARCH,           
+         trunc(sysdate - 90) Min_Date           
+  FROM DSS_CHANGE_OF_DESIGNATION DssChangeOfDesignation                          
   order by 1 DESC]]></SQLQuery>
   <EntityUsage
     Name="DssChangeOfDesignation"
@@ -950,6 +974,20 @@
     EntityAttrName="WorkflowNotificationId"
     EntityUsage="DssChangeOfDesignation"
     AliasName="WORKFLOW_NOTIFICATION_ID"/>
+  <ViewAttribute
+    Name="GisLocationIdFk"
+    PrecisionRule="true"
+    EntityAttrName="GisLocationIdFk"
+    EntityUsage="DssChangeOfDesignation"
+    AliasName="GIS_LOCATION_ID_FK"
+    LOVName="LOV_GisLocationIdFk">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AgentLevel"
     IsPersistent="false"

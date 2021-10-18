@@ -519,7 +519,7 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
          
 //         setBranchStatus("INCOMPLETE");
 //         setDssStatus("INCOMPLETE");
-         ViewObject vo=getDBTransaction().getRootApplicationModule().findViewObject("DSSUserLocVO");
+         ViewObject vo=getDBTransaction().getRootApplicationModule().findViewObject("DSSUserLovVO");
                    if (vo!=null)
             {
                     vo.remove();
@@ -531,7 +531,7 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
          try {
              setUserIdFk(new Number(userSession.getAttribute("pUserId")));
              setLastUpdatedBy(new Number(userSession.getAttribute("pUserId")));
-             vo=getDBTransaction().getRootApplicationModule().createViewObjectFromQueryStmt("DSSUserLocVO", "select  GIS_LOCATION_ID_FK from DSS_SM_USERS WHERE USER_ID_PK="+getUserIdFk());
+             vo=getDBTransaction().getRootApplicationModule().createViewObjectFromQueryStmt("DSSUserLovVO", "select  GIS_LOCATION_ID_FK from DSS_SM_USERS WHERE USER_ID_PK="+getUserIdFk());
              vo.executeQuery();             
              setGisLocationIdFk(new Number( vo.first().getAttribute(0).toString() ) );
          } catch (SQLException ex) {

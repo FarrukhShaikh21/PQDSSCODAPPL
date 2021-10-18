@@ -193,6 +193,20 @@
               <af:convertNumber type="number" pattern="#,###.##"/>
             </af:inputText>
           </af:panelFormLayout>
+          <f:facet name="context">
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+              <af:outputText value="(" id="ot3"/>
+              <af:selectOneChoice value="#{bindings.GisLocationIdFk.inputValue}"
+                                  label="#{bindings.GisLocationIdFk.label}"
+                                  required="#{bindings.GisLocationIdFk.hints.mandatory}"
+                                  shortDesc="#{bindings.GisLocationIdFk.hints.tooltip}" id="soc2" simple="true"
+                                  readOnly="true" labelStyle="font-weight:bold">
+                <f:selectItems value="#{bindings.GisLocationIdFk.items}" id="si2"/>
+                <f:validator binding="#{bindings.GisLocationIdFk.validator}"/>
+              </af:selectOneChoice>
+              <af:outputText value=")" id="ot2"/>
+            </af:panelGroupLayout>
+          </f:facet>
         </af:panelHeader>
         <af:separator id="s2"/>
         <af:switcher id="s4" facetName="#{bindings.NewRankLevel.inputValue &lt;= 50 ? 'REGION' : 'NULLREGION'}">
