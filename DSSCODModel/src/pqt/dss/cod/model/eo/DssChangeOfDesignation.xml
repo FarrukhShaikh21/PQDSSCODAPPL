@@ -68,24 +68,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="BranchName"
-    Precision="500"
-    ColumnName="BRANCH_NAME"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="DSS_CHANGE_OF_DESIGNATION">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="500"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="pqt.dss.cod.model.eo.DssChangeOfDesignation.BranchName_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="NewRank"
     Precision="500"
     ColumnName="NEW_RANK"
@@ -289,6 +271,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="DSS_CHANGE_OF_DESIGNATION"/>
+  <Attribute
+    Name="BranchCodeFk"
+    Precision="500"
+    ColumnName="BRANCH_CODE_FK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_CHANGE_OF_DESIGNATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="DssCodMgrRecruitmentForm"
     Association="pqt.dss.cod.model.eo.DssCodExistingMgrRecruitmentFkAssoc"

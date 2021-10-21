@@ -32,7 +32,6 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
         AgentNoFk,
         CurrentRank,
         AgentCnic,
-        BranchName,
         NewRank,
         EffectiveFrom,
         Remarks,
@@ -68,6 +67,7 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
         WorkflowStatus,
         WorkflowNotificationId,
         GisLocationIdFk,
+        BranchCodeFk,
         AgentLevel,
         AgentCodeSearch,
         MinDate,
@@ -110,7 +110,6 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
     public static final int AGENTNOFK = AttributesEnum.AgentNoFk.index();
     public static final int CURRENTRANK = AttributesEnum.CurrentRank.index();
     public static final int AGENTCNIC = AttributesEnum.AgentCnic.index();
-    public static final int BRANCHNAME = AttributesEnum.BranchName.index();
     public static final int NEWRANK = AttributesEnum.NewRank.index();
     public static final int EFFECTIVEFROM = AttributesEnum.EffectiveFrom.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
@@ -146,6 +145,7 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
     public static final int WORKFLOWSTATUS = AttributesEnum.WorkflowStatus.index();
     public static final int WORKFLOWNOTIFICATIONID = AttributesEnum.WorkflowNotificationId.index();
     public static final int GISLOCATIONIDFK = AttributesEnum.GisLocationIdFk.index();
+    public static final int BRANCHCODEFK = AttributesEnum.BranchCodeFk.index();
     public static final int AGENTLEVEL = AttributesEnum.AgentLevel.index();
     public static final int AGENTCODESEARCH = AttributesEnum.AgentCodeSearch.index();
     public static final int MINDATE = AttributesEnum.MinDate.index();
@@ -238,21 +238,6 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
         setAttributeInternal(AGENTCNIC, value);
     }
 
-    /**
-     * Gets the attribute value for BRANCH_NAME using the alias name BranchName.
-     * @return the BRANCH_NAME
-     */
-    public String getBranchName() {
-        return (String) getAttributeInternal(BRANCHNAME);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for BRANCH_NAME using the alias name BranchName.
-     * @param value value to set the BRANCH_NAME
-     */
-    public void setBranchName(String value) {
-        setAttributeInternal(BRANCHNAME, value);
-    }
 
     /**
      * Gets the attribute value for NEW_RANK using the alias name NewRank.
@@ -814,6 +799,22 @@ public class DssChangeOfDesignationViewRowImpl extends ViewRowImpl {
      */
     public Date getMinDate() {
         return (Date) getAttributeInternal(MINDATE);
+    }
+
+    /**
+     * Gets the attribute value for BRANCH_CODE_FK using the alias name BranchCodeFk.
+     * @return the BRANCH_CODE_FK
+     */
+    public String getBranchCodeFk() {
+        return (String) getAttributeInternal(BRANCHCODEFK);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for BRANCH_CODE_FK using the alias name BranchCodeFk.
+     * @param value value to set the BRANCH_CODE_FK
+     */
+    public void setBranchCodeFk(String value) {
+        setAttributeInternal(BRANCHCODEFK, value);
     }
 
     /**

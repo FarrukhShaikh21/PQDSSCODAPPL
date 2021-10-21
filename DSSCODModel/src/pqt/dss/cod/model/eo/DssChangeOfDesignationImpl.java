@@ -41,7 +41,6 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
         AgentNoFk,
         CurrentRank,
         AgentCnic,
-        BranchName,
         NewRank,
         EffectiveFrom,
         Remarks,
@@ -59,9 +58,11 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
         WorkflowNotificationId,
         WorkflowStatus,
         GisLocationIdFk,
+        BranchCodeFk,
         DssCodMgrRecruitmentForm,
         DssCodNewRecruitedMgr;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -89,7 +90,6 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
     public static final int AGENTNOFK = AttributesEnum.AgentNoFk.index();
     public static final int CURRENTRANK = AttributesEnum.CurrentRank.index();
     public static final int AGENTCNIC = AttributesEnum.AgentCnic.index();
-    public static final int BRANCHNAME = AttributesEnum.BranchName.index();
     public static final int NEWRANK = AttributesEnum.NewRank.index();
     public static final int EFFECTIVEFROM = AttributesEnum.EffectiveFrom.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
@@ -107,6 +107,7 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
     public static final int WORKFLOWNOTIFICATIONID = AttributesEnum.WorkflowNotificationId.index();
     public static final int WORKFLOWSTATUS = AttributesEnum.WorkflowStatus.index();
     public static final int GISLOCATIONIDFK = AttributesEnum.GisLocationIdFk.index();
+    public static final int BRANCHCODEFK = AttributesEnum.BranchCodeFk.index();
     public static final int DSSCODMGRRECRUITMENTFORM = AttributesEnum.DssCodMgrRecruitmentForm.index();
     public static final int DSSCODNEWRECRUITEDMGR = AttributesEnum.DssCodNewRecruitedMgr.index();
 
@@ -188,21 +189,6 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
         setAttributeInternal(AGENTCNIC, value);
     }
 
-    /**
-     * Gets the attribute value for BranchName, using the alias name BranchName.
-     * @return the value of BranchName
-     */
-    public String getBranchName() {
-        return (String) getAttributeInternal(BRANCHNAME);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for BranchName.
-     * @param value value to set the BranchName
-     */
-    public void setBranchName(String value) {
-        setAttributeInternal(BRANCHNAME, value);
-    }
 
     /**
      * Gets the attribute value for NewRank, using the alias name NewRank.
@@ -479,6 +465,22 @@ public class DssChangeOfDesignationImpl extends EntityImpl {
      */
     public void setGisLocationIdFk(Number value) {
         setAttributeInternal(GISLOCATIONIDFK, value);
+    }
+
+    /**
+     * Gets the attribute value for BranchCodeFk, using the alias name BranchCodeFk.
+     * @return the value of BranchCodeFk
+     */
+    public String getBranchCodeFk() {
+        return (String) getAttributeInternal(BRANCHCODEFK);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BranchCodeFk.
+     * @param value value to set the BranchCodeFk
+     */
+    public void setBranchCodeFk(String value) {
+        setAttributeInternal(BRANCHCODEFK, value);
     }
 
     /**
