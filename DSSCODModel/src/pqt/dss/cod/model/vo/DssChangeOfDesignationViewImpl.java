@@ -118,9 +118,9 @@ public class DssChangeOfDesignationViewImpl extends ViewObjectImpl implements Ds
               FacesContext fctx = FacesContext.getCurrentInstance();
               ExternalContext ectx = fctx.getExternalContext();
               HttpSession userSession = (HttpSession) ectx.getSession(false);
-              userSession.setAttribute("SSV_UserDept", 3);
-              userSession.setAttribute("pUserId",1139);
-              userSession.setAttribute("SSV_UserType","BO");
+//              userSession.setAttribute("SSV_UserDept", 3);
+//              userSession.setAttribute("pUserId",1139);
+//              userSession.setAttribute("SSV_UserType","BO");
 
               ViewCriteria vc = this.getViewCriteria("DssChangeOfDesignationViewCriteria");
               this.applyViewCriteria(vc);
